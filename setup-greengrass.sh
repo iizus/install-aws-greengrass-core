@@ -6,7 +6,7 @@ option=bootstrap-greengrass
 region=us-east-1
 new=new-$script
 output=output.txt
-dir=/home/ubuntu
+dir=/tmp
 
 cd $dir
 wget -q -O ./$script $url
