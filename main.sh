@@ -9,5 +9,5 @@ scripts=(
 
 for script in "${scripts[@]}" ; do
     url=$base/$script
-    curl -s $url | bash
+    curl $url | bash
 done
