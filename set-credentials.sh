@@ -11,6 +11,6 @@ export AWS_ACCESS_KEY_ID=$($cred | jq -r .AccessKeyId)
 export AWS_SECRET_ACCESS_KEY=$($cred | jq -r .SecretAccessKey)
 export AWS_SESSION_TOKEN=$($cred | jq -r .Token)
 
-$($cred | jq -r .AccessKeyId) > id.txt
-$($cred | jq -r .SecretAccessKey) > key.txt
-$($cred | jq -r .Token) > token.txt
+echo $($cred | jq -r .AccessKeyId) > id.txt
+echo $($cred | jq -r .SecretAccessKey) > key.txt
+echo $($cred | jq -r .Token) > token.txt
