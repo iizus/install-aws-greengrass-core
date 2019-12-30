@@ -1,7 +1,7 @@
 #!/bin/bash
 
 metadata=http://169.254.169.254/latest/meta-data
-id=$(curl $metadata/instance-id)
+id=$(curl -s $metadata/instance-id)
 group=$(grep "Greengrass group name" $output)
 name=$(echo $group | cut -c 33-)
 
