@@ -7,12 +7,6 @@ metadata=http://169.254.169.254/latest/meta-data
 role="curl -s $metadata/iam/security-credentials"
 cred=$(echo $role/$($role))
 
-export CRED=$cred
-
 export AWS_ACCESS_KEY_ID=$($cred | jq -r .AccessKeyId)
 export AWS_SECRET_ACCESS_KEY=$($cred | jq -r .SecretAccessKey)
 export AWS_SESSION_TOKEN=$($cred | jq -r .Token)
-
-echo $($cred | jq -r .AccessKeyId) > id.txt
-echo $($cred | jq -r .SecretAccessKey) > key.txt
-echo $($cred | jq -r .Token) > token.txt
