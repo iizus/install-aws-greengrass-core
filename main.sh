@@ -9,10 +9,11 @@ scripts=(
     "setup-greengrass"
     "set-tag"
 )
+concat=install.sh
 
 for script in "${scripts[@]}" ; do
     url=$base/$script.sh
-    curl -s $url >> install.sh
+    curl -s $url >> $concat
 done
 
-./install.sh
+bash $concat
