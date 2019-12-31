@@ -6,9 +6,7 @@ option=bootstrap-greengrass
 region=us-east-1
 new=new-$script
 output=output.txt
-dir=/tmp
 
-cd $dir
 wget -q -O ./$script $url
 sed -e s/us-west-2/$region/g $script > $new
 chmod +x ./$new
