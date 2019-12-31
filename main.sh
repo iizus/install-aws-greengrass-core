@@ -3,11 +3,16 @@
 apt update
 apt install -y ec2-instance-connect
 
-repo=setup-greengrass-installed-ec2-instance
-git clone https://github.com/iizus/$repo.git
+base=https://raw.githubusercontent.com/iizus/setup-greengrass-installed-ec2-instance/master
+scripts=(
+    "set-credentials"
+    "setup-greengrass"
+    "set-tag"
+)
 
-cd $repo
-chmod +x *
+for script in "${scripts[@]}" ; do
+    url=$base/$script.sh
+    curl -s $url >> install.sh
+done
 
-./setup-greengrass.sh bash set-credentials.sh
-./set-tag.sh bash set-credentials.sh
+./install.sh
