@@ -17,4 +17,3 @@ for script in "${scripts[@]}" ; do
 done
 
 bash $concat
-rm $concat
