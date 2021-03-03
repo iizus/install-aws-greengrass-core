@@ -17,3 +17,5 @@ for script in "${scripts[@]}" ; do
 done
 
 bash $concat
+
+sudo chmod 777 /greengrass/ggc/deployment/lambda/arn.aws.lambda.*
