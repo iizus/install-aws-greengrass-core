@@ -6,6 +6,4 @@ group=$(grep "Greengrass group name" $output)
 name=$(echo $group | cut -c 33-)
 region=us-east-1
 
-apt update
-apt install -y awscli
 aws ec2 create-tags --resources $id --tags Key=Name,Value=$name --region $region
